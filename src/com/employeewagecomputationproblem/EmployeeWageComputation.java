@@ -4,10 +4,11 @@
 //UC4 Using switch case statement
 //UC5 Calculating wages for a month
 //UC6 Calculate wages till condition of total working hours or days is reached for a month
+//UC7 Refactor the code write a class method to compute employee wage
 package com.employeewagecomputationproblem;
 
 public class EmployeeWageComputation {
-    public static void main(String args[])
+    public static void calculateTotalWage()
     {
         final int PART_TIME = 1;
         final int FULL_TIME = 2;
@@ -38,5 +39,8 @@ public class EmployeeWageComputation {
         }
         System.out.println("Total wage for a month is " + totalWage);
     }
-
+    public static void main(String args[])
+    {
+        calculateTotalWage();
+    }
 }

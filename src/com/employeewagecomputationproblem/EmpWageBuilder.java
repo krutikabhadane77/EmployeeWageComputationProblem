@@ -25,7 +25,18 @@ public class EmpWageBuilder implements CalculateEmpWage {
                 System.out.println(k + ": "+ cew.totalWagesRecord.get(k));
             }
         }
+        String query="Amazon";
+        System.out.println(getTotalWageByCompany(query,emp.empWages));
 
+    }
+
+    private static String getTotalWageByCompany(String query, ArrayList<CompanyEmpWage> empWages2) {
+        for (CompanyEmpWage c : empWages2) {
+            if (c.companyName.equals(query)) {
+                return "Total Wage: " + c.totalWage;
+            }
+        }
+        return "Company not found!";
     }
 
     @Override

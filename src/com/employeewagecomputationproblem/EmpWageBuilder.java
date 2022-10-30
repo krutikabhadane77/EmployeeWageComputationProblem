@@ -1,24 +1,28 @@
 package com.employeewagecomputationproblem;
 
+import java.util.ArrayList;
+
 public class EmpWageBuilder implements CalculateEmpWage {
-    private CompanyEmpWage[] empWages;
+    private ArrayList<CompanyEmpWage> empWages;
 
     public EmpWageBuilder() {
 
-        empWages = new CompanyEmpWage[2];
+        empWages = new ArrayList<CompanyEmpWage>();
     }
 
     public static void main(String[] args) {
 
         EmpWageBuilder emp = new EmpWageBuilder();
-        emp.empWages[0] = new CompanyEmpWage("Flipkart", 20, 20, 200);
-        emp.calculateTotalWage(emp.empWages[0]);
-        emp.empWages[1] = new CompanyEmpWage("Amazon", 4, 30, 150);
-        emp.calculateTotalWage(emp.empWages[1]);
+        emp.empWages.add(new CompanyEmpWage("Flipkart", 20, 20, 200));
+        emp.empWages.add(new CompanyEmpWage("Amazon", 4, 30, 150));
 
-        for (int i = 0; i < 2; i++) {
-            System.out.println(emp.empWages[i]);
+        for (CompanyEmpWage cew : emp.empWages) {
+            emp.calculateTotalWage(cew);
         }
+        for (CompanyEmpWage cew : emp.empWages) {
+            System.out.println(cew);
+        }
+
     }
 
     @Override
